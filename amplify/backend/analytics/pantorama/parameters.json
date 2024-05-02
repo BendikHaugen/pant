@@ -1,0 +1,22 @@
+{
+  "appName": "pantorama",
+  "roleName": "pinpointLambdaRolefd6e7bd6",
+  "cloudformationPolicyName": "cloudformationPolicyfd6e7bd6",
+  "cloudWatchPolicyName": "cloudWatchPolicyfd6e7bd6",
+  "pinpointPolicyName": "pinpointPolicyfd6e7bd6",
+  "authPolicyName": "pinpoint_amplify_fd6e7bd6",
+  "unauthPolicyName": "pinpoint_amplify_fd6e7bd6",
+  "authRoleName": {
+    "Ref": "AuthRoleName"
+  },
+  "unauthRoleName": {
+    "Ref": "UnauthRoleName"
+  },
+  "authRoleArn": {
+    "Fn::GetAtt": [
+      "AuthRole",
+      "Arn"
+    ]
+  },
+  "pinpointInAppMessagingPolicyName": "pinpointInAppMessagingPolicyNamefd6e7bd6"
+}

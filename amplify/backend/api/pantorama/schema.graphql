@@ -1,0 +1,63 @@
+input AMPLIFY {
+  globalAuthRule: AuthRule = {allow: public}
+} # FOR TESTING ONLY!
+type User @model {
+  id: ID!
+  username: String!
+  email: String!
+  phone: String
+  posts: [Post] @hasMany(fields: ["id"])
+  postsIds: [ID]
+  pickups: [Pickup] @hasMany(fields: ["id"])
+  pickupsIds: [ID]
+  createdAt: String!
+  Chats: [Chat] @hasMany(fields: ["id"])
+  ChatsIds: [ID]
+  messages: [Message] @hasMany(fields: ["id"])
+  messagesIds: [ID]
+}
+
+type Post @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  description: String
+  estimatedValue: Float!
+  createdBy: User @belongsTo(fields: ["createdById"])
+  createdById: ID!
+  createdAt: String
+  includesGlass: Boolean
+  glassBid: Float
+  longitude: Float!
+  latitude: Float!
+  address: String!
+  pickup: Pickup @hasOne(fields: ["pickupId"])
+  pickupId: ID
+}
+
+type Pickup @model {
+  id: ID!
+  post: Post @belongsTo(fields: ["postId"])
+  postId: ID!
+  pickedUpBy: User @belongsTo(fields: ["pickedUpById"])
+  pickedUpById: ID!
+  pickedUpAt: String
+  actualValue: Float
+}
+
+type Chat @model {
+  id: ID!
+  messages: [Message] @hasMany(fields: ["id"])
+  messagesIds: [ID]
+  users: [User] @hasMany(fields: ["id"])
+  usersIds: [ID]
+  createdAt: String!
+}
+
+type Message @model {
+  id: ID!
+  content: String!
+  chat: Chat @belongsTo(fields: ["chatId"])
+  chatId: ID!
+  sender: User @belongsTo(fields: ["senderId"])
+  senderId: ID!
+  createdAt: String!
+}

@@ -1,0 +1,38 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-pantorama-dev-203224-authRole",
+      "UnauthRoleArn": "arn:aws:iam::305637213530:role/amplify-pantorama-dev-203224-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::305637213530:role/amplify-pantorama-dev-203224-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-pantorama-dev-203224-deployment",
+      "UnauthRoleName": "amplify-pantorama-dev-203224-unauthRole",
+      "StackName": "amplify-pantorama-dev-203224",
+      "StackId": "arn:aws:cloudformation:eu-north-1:305637213530:stack/amplify-pantorama-dev-203224/f5f8a700-c2ca-11ee-82de-0a0c6afe36f7",
+      "AmplifyAppId": "d48og8pgnl9vl"
+    },
+    "categories": {
+      "api": {
+        "pantorama": {}
+      },
+      "auth": {
+        "pantoramaa0ddd05b": {}
+      },
+      "notifications": {
+        "Pinpoint": {
+          "Name": "pantorama-dev",
+          "Id": "ac948f10db854dba8bdcaa3fdedc3e2b",
+          "Region": "eu-central-1"
+        }
+      },
+      "analytics": {
+        "Pinpoint": {
+          "Name": "pantorama-dev",
+          "Id": "ac948f10db854dba8bdcaa3fdedc3e2b",
+          "Region": "eu-central-1"
+        },
+        "pantorama": {}
+      }
+    }
+  }
+}
